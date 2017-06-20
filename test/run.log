@@ -1,0 +1,25 @@
+=====key.js=====
+inserted
+key test ok
+
+=====like.js=====
+like: 5.872ms
+simple like: 167.982ms
+
+=====performance.js=====
+inserting10000: 1234.978ms
+pushing10000: 75.369ms
+arr10000: 13.985ms
+sorting100: 534.905ms
+
+=====sample.js=====
+[ 0, 0, false, 2, 1, 0 ]
+[ [ 11, 12 ], [ 33, 53 ], [ 66, 67 ], [ 152, 222 ], [ 928, 1743 ] ]
+
+=====simple.js=====
+[ 0, 2, 8, 9, 13 ]
+[ 'bar', 'foo', 'hoge' ]
+resume (no checking) [ 1, 2, 3, 4, 5 ]
+
+=====uniq.js=====
+

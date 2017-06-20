@@ -1,4 +1,4 @@
-var SortedList = require('sortedlist');
+var SortedList = require('../../SortedList');
 
 var compare = function(a, b) {
   return (a[0] > b[0]) ? 1 : (a[0] == b[0]) ? 0 : -1;

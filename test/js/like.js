@@ -1,6 +1,11 @@
-var list = require('sortedlist').create({compare: "string"});
+var SortedList = require('../../SortedList');
 
-require('linestream').tsv(__dirname + '/genes', function(data, line) {
+// https://github.com/shinout/LineStream
+var LineStream = require('../libs/LineStream')
+
+var list = SortedList.create({compare: "string"});
+
+LineStream.tsv(__dirname + '/../data/genes', function(data, line) {
   var gene = data[0];
   list.insert(gene);
   list.insert(gene);
