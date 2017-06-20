@@ -30,7 +30,7 @@ var SortedList = function SortedList(options={}, arr=[]) {
  * creates an instance
  **/
 SortedList.create = function(options, arr) {
-  return SortedList(options, arr)
+  return new SortedList(options, arr)
 }
 
 
