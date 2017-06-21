@@ -182,10 +182,10 @@ Returns the position before insertion.
 
 ```javascript
     var list = SortedList.create([1,2,4,6,10]);
-    console.log(list.bsearch(4)); // 2
-    console.log(list.bsearch(5)); // 2
-    console.log(list.bsearch(0)); // -1
-    console.log(list.bsearch(12)); // 4
+    console.log(list.bsearch(4));   // 2
+    console.log(list.bsearch(5));   // 2
+    console.log(list.bsearch(0));   // -1
+    console.log(list.bsearch(12));  // 4
 ```
 
 #### sortedList.key(val)
@@ -196,10 +196,10 @@ Otherwise, returns null.
 
 ```javascript
     var list = SortedList.create([1,2,4,4,4,6,10]);
-    console.log(list.key(10)); // 6
-    console.log(list.key(4)); // 2
-    console.log(list.key(5)); // null
-    console.log(list.key(1)); // 0
+    console.log(list.key(10));  // 6
+    console.log(list.key(4));   // 2
+    console.log(list.key(5));   // null
+    console.log(list.key(1));   // 0
 ```
 
 #### sortedList.keys(val)
@@ -210,10 +210,10 @@ Otherwise, returns null.
 
 ```javascript
     var list = SortedList.create([1,2,4,4,4,6,10]);
-    console.log(list.keys(10)); // [4]
-    console.log(list.keys(4)); // [2, 3, 4]
-    console.log(list.keys(5)); // null
-    console.log(list.keys(1)); // [0]
+    console.log(list.keys(10));  // [6]
+    console.log(list.keys(4));   // [2, 3, 4]
+    console.log(list.keys(5));   // null
+    console.log(list.keys(1));   // [0]
 ```
 
 #### sortedList.toArray()
@@ -241,6 +241,6 @@ As SortedList extends Array, we can use every method in Array.
 Be careful of these differences.
 
 ```javascript
-    Array.isArray(SortedList.create()) // false
-    (SortedList.create()) instanceof Array // true
+    Array.isArray(SortedList.create())      // false
+    (SortedList.create()) instanceof Array  // true
 ```
