@@ -105,7 +105,10 @@ Use a standard implementation for commonly used comparison functions:
 <tr><th>resume</th>
 <td>boolean</td>
 <td>
-If true, sets the array given in the second arguments with no filtration.
+`true` indicates that the newly created instance of SortedList should be initialized with __all__ the contents of `arr`,
+and in the __exact same__ order as given.
+`false` indicates that the initial value contains the elements of `arr`,
+but "filter" has been applied to each element and the insertion order is determined by "compare".
 </td>
 <td>true</td>
 <td>false</td>
