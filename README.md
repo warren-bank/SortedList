@@ -62,7 +62,7 @@ create an instance of SortedList.
 
 <tr><th>unique</th>
 <td>boolean</td>
-<td>filter unique values in insertion.</td>
+<td>`true` indicates that duplicate values should be filtered, which will prevent their insertion.</td>
 <td>true</td>
 <td>false</td>
 </tr>
@@ -70,36 +70,40 @@ create an instance of SortedList.
 <tr><th>filter</th>
 <td>function</td>
 <td>
-register a filtration function which returns boolean indicating valid value, running before insertion.
+Register a filtration function which is called before the insertion of each new value.
+Return value is boolean.
+`true` indicates that the value passes the filter and is permitted to be inserted.
+`false` indicates that the value has failed the filter and cannot be inserted.
 </td>
 <td>function (v) { return !isNaN(Number(v) }</td>
-<td>//no filtration<br>function(v) { return true }</td>
-</tr>
-
-<tr><th>compare</th>
-<td>string: one of "string", "number"</td>
-<td>
-comparison function comparing two strings or two numbers asc.
-</td>
-<td>"number"</td>
-<td>"number"</td>
+<td>function (v) { return true }</td>
 </tr>
 
 <tr><th>compare</th>
 <td>function</td>
 <td>
-a custom comparison function which returns one of [1, 0, -1].<br>
-The same spec as Array#sort(fn).
-See <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort">Mozilla official site</a>.
+Custom comparison function which returns one of [1, 0, -1].
+The same spec as [ Array.sort(fn) ](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort).
 </td>
 <td>function(a,b) { return a.start - b.start }</td>
 <td></td>
 </tr>
 
+<tr><th>compare</th>
+<td>string: one of "string", "number"</td>
+<td>
+Use a standard implementation for commonly used comparison functions:
+  * "string" values
+  * "number" values
+</td>
+<td>"string"</td>
+<td>"number"</td>
+</tr>
+
 <tr><th>resume</th>
 <td>boolean</td>
 <td>
-if true, sets the array given in the second arguments with no filtration
+If true, sets the array given in the second arguments with no filtration.
 </td>
 <td>true</td>
 <td>false</td>
@@ -108,12 +112,12 @@ if true, sets the array given in the second arguments with no filtration
 <tr><th>order</th>
 <td>string: one of "ascending", "descending"</td>
 <td>
-determines the order in which elements of the list are sorted.<br>
-"ascending" indicates that smaller values occur toward the beginning.<br>
+Determines the order in which elements of the list are sorted.
+"ascending" indicates that smaller values occur toward the beginning.
 "descending" indicates that larger values occur toward the beginning.<br>
-note:<br>
-do NOT adjust the "compare" function to achieve "descending" sort order.<br>
-this will be handled automatically.
+note:
+Do NOT adjust the "compare" function to achieve "descending" sort order.
+This will be handled automatically.
 </td>
 <td>"descending"</td>
 <td>"ascending"</td>
@@ -122,10 +126,10 @@ this will be handled automatically.
 <tr><th>max</th>
 <td>number</td>
 <td>
-restricts the maximum length of the list.<br>
-truncates from the end of the list.<br>
-if list is sorted in 'ascending' order, then larger values are lost.
-if list is sorted in 'descending' order, then smaller values are lost.
+Restricts the maximum length of the list.
+Truncates from the end of the list.
+If list is sorted in 'ascending' order, then larger values are lost.
+If list is sorted in 'descending' order, then smaller values are lost.
 </td>
 <td>100</td>
 <td></td>
