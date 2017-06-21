@@ -83,7 +83,7 @@ Return value is boolean.
 <td>function</td>
 <td>
 Custom comparison function which returns one of [1, 0, -1].
-The same spec as [ Array.sort(fn) ](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort).
+The same spec as [Array.sort](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort).
 </td>
 <td>function(a,b) { return a.start - b.start }</td>
 <td></td>
@@ -93,8 +93,10 @@ The same spec as [ Array.sort(fn) ](https://developer.mozilla.org/en/JavaScript/
 <td>string: one of "string", "number"</td>
 <td>
 Use a standard implementation for commonly used comparison functions:
-  * "string" values
-  * "number" values
+  <ul>
+    <li>"string" values</li>
+    <li>"number" values</li>
+  </ul>
 </td>
 <td>"string"</td>
 <td>"number"</td>
