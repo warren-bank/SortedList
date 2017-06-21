@@ -3,8 +3,8 @@ inserted
 key test ok
 
 =====like.js=====
-like: 3.866ms
-simple like: 156.037ms
+like: 8.136ms
+simple like: 165.784ms
 
 =====order.js=====
 [ 7, 6, 5, 4, 3, 2, 1, 0 ]
@@ -13,10 +13,10 @@ simple like: 156.037ms
 [ 0, 1, 2, 3, 4 ]
 
 =====performance.js=====
-inserting10000: 941.164ms
-pushing10000: 66.474ms
-arr10000: 19.044ms
-sorting100: 389.698ms
+inserting10000: 1414.778ms
+pushing10000: 42.130ms
+arr10000: 14.118ms
+sorting100: 427.446ms
 
 =====sample.js=====
 [ 0, 0, false, 2, 1, 0 ]
@@ -25,7 +25,7 @@ sorting100: 389.698ms
 =====simple.js=====
 [ 0, 2, 8, 9, 13 ]
 [ 'bar', 'foo', 'hoge' ]
-resume (no checking) [ 1, 2, 3, 4, 5 ]
+resume (no checking) [ 2, 1, 3, 4, 5 ]
 
 =====uniq.js=====
 
