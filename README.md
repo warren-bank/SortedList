@@ -105,8 +105,8 @@ Use a standard implementation for commonly used comparison functions:
 <tr><th>resume</th>
 <td>boolean</td>
 <td>
-`true` indicates that the newly created instance of SortedList should be initialized with __all__ the contents of `arr`,
-and in the __exact same__ order as given.
+`true` indicates that the newly created instance of SortedList should be initialized with <b>all</b> the contents of `arr`,
+and in the <b>exact same</b> order as given.
 `false` indicates that the initial value contains the elements of `arr`,
 but "filter" has been applied to each element and the insertion order is determined by "compare".
 </td>
