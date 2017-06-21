@@ -57,29 +57,31 @@ create an instance of SortedList.
 <tr><th>key</th>
 <td>type</td>
 <td>description</td>
-<td>example</td></tr>
+<td>example</td>
+<td>default</td></tr>
 
 <tr><th>unique</th>
 <td>boolean</td>
 <td>filter unique values in insertion.</td>
 <td>true</td>
+<td>false</td>
 </tr>
 
 <tr><th>filter</th>
 <td>function</td>
 <td>
 register a filtration function which returns boolean indicating valid value, running before insertion.
-By default, function(v) { returns true }, that is, no filtration.
 </td>
 <td>function (v) { return !isNaN(Number(v) }</td>
+<td>//no filtration<br>function(v) { return true }</td>
 </tr>
 
 <tr><th>compare</th>
-<td>one of "string", "number"</td>
+<td>string: one of "string", "number"</td>
 <td>
-comparison function comparing two strings or two numbers asc.<br>
-By default, "number" comparison.
+comparison function comparing two strings or two numbers asc.
 </td>
+<td>"number"</td>
 <td>"number"</td>
 </tr>
 
@@ -91,6 +93,7 @@ The same spec as Array#sort(fn).
 See <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort">Mozilla official site</a>.
 </td>
 <td>function(a,b) { return a.start - b.start }</td>
+<td></td>
 </tr>
 
 <tr><th>resume</th>
@@ -99,6 +102,33 @@ See <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Object
 if true, sets the array given in the second arguments with no filtration
 </td>
 <td>true</td>
+<td>false</td>
+</tr>
+
+<tr><th>order</th>
+<td>string: one of "ascending", "descending"</td>
+<td>
+determines the order in which elements of the list are sorted.<br>
+"ascending" indicates that smaller values occur toward the beginning.<br>
+"descending" indicates that larger values occur toward the beginning.<br>
+note:<br>
+do NOT adjust the "compare" function to achieve "descending" sort order.<br>
+this will be handled automatically.
+</td>
+<td>"descending"</td>
+<td>"ascending"</td>
+</tr>
+
+<tr><th>max</th>
+<td>number</td>
+<td>
+restricts the maximum length of the list.<br>
+truncates from the end of the list.<br>
+if list is sorted in 'ascending' order, then larger values are lost.
+if list is sorted in 'descending' order, then smaller values are lost.
+</td>
+<td>100</td>
+<td></td>
 </tr>
 </table>
 
@@ -107,7 +137,7 @@ if true, sets the array given in the second arguments with no filtration
 Returns an instance of SortedList.
 
 ### sortedList.insertOne(val) ###
-Inserts **val** to the list. 
+Inserts **val** to the list.
 
 Returns inserted position if succeeded, false if failed.
 

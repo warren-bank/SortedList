@@ -3,14 +3,20 @@ inserted
 key test ok
 
 =====like.js=====
-like: 5.872ms
-simple like: 167.982ms
+like: 3.866ms
+simple like: 156.037ms
+
+=====order.js=====
+[ 7, 6, 5, 4, 3, 2, 1, 0 ]
+[ 7, 6, 5, 4, 3 ]
+[ 0, 1, 2, 3, 4, 5, 6, 7 ]
+[ 0, 1, 2, 3, 4 ]
 
 =====performance.js=====
-inserting10000: 1234.978ms
-pushing10000: 75.369ms
-arr10000: 13.985ms
-sorting100: 534.905ms
+inserting10000: 941.164ms
+pushing10000: 66.474ms
+arr10000: 19.044ms
+sorting100: 389.698ms
 
 =====sample.js=====
 [ 0, 0, false, 2, 1, 0 ]

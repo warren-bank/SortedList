@@ -19,6 +19,17 @@ var SortedList = function SortedList(options={}, arr=[]) {
 
   this._unique = !!options.unique
 
+  this._sort_order = ((typeof options.order === 'string') && (options.order.toLowerCase() === 'descending')) ? 'descending' : 'ascending'
+
+  if (this._sort_order === 'descending'){
+    let asc_compare = this._compare
+    this._compare = function(a,b){
+      return asc_compare(a,b) * -1
+    }
+  }
+
+  this._max_elements = (typeof options.max === 'number') ? options.max : false
+
   if (options.resume && arr) {
     arr.forEach(function(v, i) { this.push(v) }, this)
   }
@@ -33,7 +44,6 @@ SortedList.create = function(options, arr) {
   return new SortedList(options, arr)
 }
 
-
 SortedList.prototype = new Array()
 SortedList.prototype.constructor = Array.prototype.constructor
 
@@ -46,8 +56,13 @@ SortedList.prototype.insertOne = function(val) {
   var pos = this.bsearch(val)
   if (this._unique && this.key(val, pos) != null) return false
   if (!this._filter(val, pos)) return false
-  this.splice(pos+1, 0, val)
-  return pos+1
+  pos++
+  // if new element would be inserted at the end of the list, and the list is already at capacity: skip insertion
+  if (this._max_elements && (this._max_elements === pos)) return false
+  this.splice(pos, 0, val)
+  // if new element was inserted into the list, and now the list exceeds its capacity: truncate from tail end
+  while (this._max_elements && (this.length > this._max_elements)) this.pop()
+  return pos
 }
 
 /**
@@ -153,14 +168,12 @@ SortedList.prototype.toArray = function() {
   return this.slice()
 }
 
-
 /**
  * default filtration function
  **/
 SortedList.prototype._filter = function(val, pos) {
   return true
 }
-
 
 /**
  * comparison functions
