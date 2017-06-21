@@ -1,8 +1,22 @@
-{ "name": "sortedlist"
-, "version": "0.3.1"
-, "description": "sorted list"
-, "keywords": ["sort", "list", "bsearch", "algorithm"]
-, "author": "SHIN Suzuki <shinout310@gmail.com>"
-, "main": "./SortedList.js"
-, "homepage": "https://github.com/shinout/SortedList"
+{
+  "name": "@warren-bank/node-sortedlist",
+  "version": "1.0.0",
+  "main": "SortedList.js",
+  "description": "sorted list",
+  "contributors": [
+    "SHIN Suzuki <shinout310@gmail.com>",
+    "Warren Bank (https://github.com/warren-bank)"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/warren-bank/node-sortedlist"
+  },
+  "keywords": [
+    "sort",
+    "list",
+    "bsearch"
+  ]
 }
