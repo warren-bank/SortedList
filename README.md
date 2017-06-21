@@ -83,7 +83,7 @@ Return value is boolean.
 <td>function</td>
 <td>
 Custom comparison function which returns one of [1, 0, -1].
-The same spec as [Array.sort](https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort).
+The same spec as <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort">Array.sort(fn)</a>.
 </td>
 <td>function(a,b) { return a.start - b.start }</td>
 <td></td>
