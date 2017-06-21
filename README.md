@@ -62,7 +62,7 @@ create an instance of SortedList.
 
 <tr><th>unique</th>
 <td>boolean</td>
-<td>`true` indicates that duplicate values should be filtered, which will prevent their insertion.</td>
+<td><code>true</code> indicates that duplicate values should be filtered, which will prevent their insertion.</td>
 <td>true</td>
 <td>false</td>
 </tr>
@@ -72,11 +72,11 @@ create an instance of SortedList.
 <td>
 Register a filtration function which is called before the insertion of each new value.
 Return value is boolean.
-`true` indicates that the value passes the filter and is permitted to be inserted.
-`false` indicates that the value has failed the filter and cannot be inserted.
+<code>true</code> indicates that the value passes the filter and is permitted to be inserted.
+<code>false</code> indicates that the value has failed the filter and cannot be inserted.
 </td>
-<td>function (v) { return !isNaN(Number(v) }</td>
-<td>function (v) { return true }</td>
+<td><code>function (v) { return !isNaN(Number(v) }</code></td>
+<td><code>function (v) { return true }</code></td>
 </tr>
 
 <tr><th>compare</th>
@@ -85,7 +85,7 @@ Return value is boolean.
 Custom comparison function which returns one of [1, 0, -1].
 The same spec as <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/sort">Array.sort(fn)</a>.
 </td>
-<td>function(a,b) { return a.start - b.start }</td>
+<td><code>function(a,b) { return a.start - b.start }</code></td>
 <td></td>
 </tr>
 
@@ -105,9 +105,9 @@ Use a standard implementation for commonly used comparison functions:
 <tr><th>resume</th>
 <td>boolean</td>
 <td>
-`true` indicates that the newly created instance of SortedList should be initialized with <b>all</b> the contents of `arr`,
+<code>true</code> indicates that the newly created instance of SortedList should be initialized with <b>all</b> the contents of <code>arr</code>,
 and in the <b>exact same</b> order as given.
-`false` indicates that the initial value contains the elements of `arr`,
+<code>false</code> indicates that the initial value contains the elements of <code>arr</code>,
 but "filter" has been applied to each element and the insertion order is determined by "compare".
 </td>
 <td>true</td>
