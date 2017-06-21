@@ -1,16 +1,14 @@
-SortedList
-==========
-sorted list in JavaScript (browsers (ES5 compatible), Node.js)
+## [SortedList](https://github.com/warren-bank/node-sortedlist)
 
-## Installation ##
-    git clone git://github.com/shinout/SortedList.git
+CommonJS module: sorted list that uses a binary search algorithm for search and insertion
 
-    OR
+### Install
 
-    npm install sortedlist
+`npm install --save @warren-bank/node-sortedlist`
 
-## Usage ##
+### Usage
 
+```javascript
     // sort number
     var list = SortedList.create();
     list.insert(13, 2, 9, 8, 0);
@@ -36,20 +34,22 @@ sorted list in JavaScript (browsers (ES5 compatible), Node.js)
 
     // register an already filtered array
     var list = SortedList.create([0,1,2,3,4], { resume: true });
+```
 
-## API Documentation ##
-- SortedList.create(options, arr)
-- sortedList.insertOne(val)
-- sortedList.insert(val1, val2, ...)
-- sortedList.remove(pos)
-- sortedList.unique(createNew)
-- sortedList.bsearch(val)
-- sortedList.key(val)
-- sortedList.keys(val)
-- sortedList.toArray()
+### API Documentation
 
+* SortedList.create(options, arr)
+* sortedList.insertOne(val)
+* sortedList.insert(val1, val2, ...)
+* sortedList.remove(pos)
+* sortedList.unique(createNew)
+* sortedList.bsearch(val)
+* sortedList.key(val)
+* sortedList.keys(val)
+* sortedList.toArray()
 
-### SortedList.create(options, arr) ###
+#### SortedList.create(options, arr)
+
 create an instance of SortedList.
 
 **options** is option object as follows.
@@ -136,70 +136,86 @@ if list is sorted in 'descending' order, then smaller values are lost.
 
 Returns an instance of SortedList.
 
-### sortedList.insertOne(val) ###
+#### sortedList.insertOne(val)
+
 Inserts **val** to the list.
 
 Returns inserted position if succeeded, false if failed.
 
+#### sortedList.insert(val1, val2, ...)
 
-### sortedList.insert(val1, val2, ...) ###
 Inserts **val1** **val2**, ... to the list.
 
 Returns list of the result of executing insertOne(val).
 
+```javascript
     console.log(SortedList.create().insert(3,1,2,4,5));
     // [0,0,1,3,4]
+```
 
-### sortedList.remove(pos) ###
+#### sortedList.remove(pos)
+
 Removes a value in the position **pos**.
 
 Returns this.
 
-### sortedList.unique(createNew) ###
+#### sortedList.unique(createNew)
+
 Make the list unique.
 If **createNew** is true, returns a new array.
 
 Otherwise, duplicated elements are internally removed, and this method returns this.
 
-### sortedList.bsearch(val) ###
+#### sortedList.bsearch(val)
+
 Executes binary search with the given **val**.
 Returns the position before insertion.
 
+```javascript
     var list = SortedList.create([1,2,4,6,10]);
     console.log(list.bsearch(4)); // 2
     console.log(list.bsearch(5)); // 2
     console.log(list.bsearch(0)); // -1
     console.log(list.bsearch(12)); // 4
+```
 
-### sortedList.key(val) ###
+#### sortedList.key(val)
+
 If the given **val** exists, returns the first position.
 
 Otherwise, returns null.
 
+```javascript
     var list = SortedList.create([1,2,4,4,4,6,10]);
     console.log(list.key(10)); // 6
     console.log(list.key(4)); // 2
     console.log(list.key(5)); // null
     console.log(list.key(1)); // 0
+```
 
-### sortedList.keys(val) ###
+#### sortedList.keys(val)
+
 If the given **val** exists, returns an array of all the positions with **val**.
 
 Otherwise, returns null.
 
+```javascript
     var list = SortedList.create([1,2,4,4,4,6,10]);
     console.log(list.keys(10)); // [4]
     console.log(list.keys(4)); // [2, 3, 4]
     console.log(list.keys(5)); // null
     console.log(list.keys(1)); // [0]
+```
 
+#### sortedList.toArray()
 
-### sortedList.toArray() ###
 Creates a new array with this list.
 
-## SortedList extends Array ###
+### SortedList extends Array
+
 As SortedList extends Array, we can use every method in Array.
 
+```javascript
     var list = SortedList.create([1,2,4,6,10]);
 
     console.log(list[2]) // 4
@@ -211,8 +227,11 @@ As SortedList extends Array, we can use every method in Array.
     var newArr = list.map(function(total, v) {
       // ...
     });
+```
 
 Be careful of these differences.
 
+```javascript
     Array.isArray(SortedList.create()) // false
     (SortedList.create()) instanceof Array // true
+```

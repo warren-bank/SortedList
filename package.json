@@ -1,6 +1,6 @@
 {
   "name": "@warren-bank/node-sortedlist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "SortedList.js",
   "description": "sorted list",
   "contributors": [
