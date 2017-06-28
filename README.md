@@ -16,9 +16,9 @@ CommonJS module: sorted list that uses a binary search algorithm for search and 
 
     // sort string
     var arr = ["foo", "bar", "hoge"];
-    var strList = SortedList.create(arr, {
+    var strList = SortedList.create({
       compare: "string"
-    });
+    }, arr);
     console.log(strList.toArray()); // ["bar", "foo", "hoge"]
 
     // SortedList is not Array
@@ -33,8 +33,10 @@ CommonJS module: sorted list that uses a binary search algorithm for search and 
     console.assert(list.pop(), 13);
 
     // register an already filtered array
-    var list = SortedList.create([0,1,2,3,4], { resume: true });
+    var list = SortedList.create({ resume: true }, [0,1,2,3,4]);
 ```
+
+See the [tests](https://github.com/warren-bank/node-sortedlist/tree/commonjs/tests/js) for more usage examples.
 
 ### API Documentation
 
@@ -229,11 +231,11 @@ As SortedList extends Array, we can use every method in Array.
 
     console.log(list[2]) // 4
 
-    list.forEach(function(total, v) {
+    list.forEach(function(currentValue, index, list) {
       // ...
     });
 
-    var newArr = list.map(function(total, v) {
+    var newArr = list.map(function(currentValue, index, list) {
       // ...
     });
 ```
