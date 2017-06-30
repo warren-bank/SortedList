@@ -3,8 +3,8 @@ inserted
 key test ok
 
 =====like.js=====
-like: 6.221ms
-simple like: 217.259ms
+like: 5.678ms
+simple like: 104.584ms
 
 =====order.js=====
 [ 7, 6, 5, 4, 3, 2, 1, 0 ]
@@ -31,10 +31,53 @@ in ordered list: 13,11,9,7,3,1
   position of element '14' is '-1'
 
 =====performance.js=====
-inserting10000: 1237.694ms
-pushing10000: 102.158ms
-arr10000: 22.660ms
-sorting100: 623.567ms
+inserting10000: 892.003ms
+pushing10000: 88.989ms
+arr10000: 22.489ms
+sorting100: 492.159ms
+
+=====refilter.js=====
+[250 ms]: length of list = 10
+[500 ms]: length of list = 10
+[750 ms]: length of list = 10
+[1000 ms]: length of list = 9
+[1250 ms]: length of list = 9
+[1500 ms]: length of list = 9
+[1750 ms]: length of list = 9
+[2000 ms]: length of list = 8
+[2250 ms]: length of list = 8
+[2500 ms]: length of list = 8
+[2750 ms]: length of list = 8
+[3000 ms]: length of list = 7
+[3250 ms]: length of list = 7
+[3500 ms]: length of list = 7
+[3750 ms]: length of list = 7
+[4000 ms]: length of list = 6
+[4250 ms]: length of list = 6
+[4500 ms]: length of list = 6
+[4750 ms]: length of list = 6
+[5000 ms]: length of list = 5
+[5250 ms]: length of list = 5
+[5500 ms]: length of list = 5
+[5750 ms]: length of list = 5
+[6000 ms]: length of list = 4
+[6250 ms]: length of list = 4
+[6500 ms]: length of list = 4
+[6750 ms]: length of list = 4
+[7000 ms]: length of list = 3
+[7250 ms]: length of list = 3
+[7500 ms]: length of list = 3
+[7750 ms]: length of list = 3
+[8000 ms]: length of list = 2
+[8250 ms]: length of list = 2
+[8500 ms]: length of list = 2
+[8750 ms]: length of list = 2
+[9000 ms]: length of list = 1
+[9250 ms]: length of list = 1
+[9500 ms]: length of list = 1
+[9750 ms]: length of list = 1
+[10000 ms]: length of list = 0
+test complete
 
 =====sample.js=====
 [ 0, 0, false, 2, 1, 0 ]

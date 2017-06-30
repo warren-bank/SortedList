@@ -8,6 +8,7 @@ var SortedList = function SortedList(options={}, arr=[]) {
 
   if (typeof options.filter == 'function') {
     this._filter = options.filter
+    this._refilter_timestamp = Date.now()
   }
 
   if (typeof options.compare == 'function') {
@@ -83,6 +84,25 @@ SortedList.prototype.insert = function() {
 SortedList.prototype.remove = function(pos) {
   this.splice(pos, 1)
   return this
+}
+
+SortedList.prototype.refilter = function(debounce_ms) {
+  // sanity check: does the list use a filter function
+  if (this._refilter_timestamp === undefined) return true
+
+  let now, wait_until, index
+
+  now = Date.now()
+  wait_until = this._refilter_timestamp + debounce_ms
+  // debounce
+  if (now < wait_until) return false
+
+  for (index=(this.length-1); index>=0; index--) {
+    if (! this._filter(this[index])) this.remove(index)
+  }
+
+  this._refilter_timestamp = now
+  return true
 }
 
 /**
