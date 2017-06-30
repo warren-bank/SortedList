@@ -44,6 +44,7 @@ See the [tests](https://github.com/warren-bank/node-sortedlist/tree/commonjs/tes
 * sortedList.insertOne(val)
 * sortedList.insert(val1, val2, ...)
 * sortedList.remove(pos)
+* sortedList.refilter(debounce_ms)
 * sortedList.unique(createNew)
 * sortedList.bsearch(val)
 * sortedList.key(val)
@@ -169,6 +170,17 @@ Returns list of the result of executing insertOne(val).
 Removes a value in the position **pos**.
 
 Returns this.
+
+#### sortedList.refilter(debounce_ms)
+
+If `options.filter` is not defined, then nothing is done.
+
+If less time than `debounce_ms` has ellapsed since the last time the list was refiltered, then nothing is done.
+
+Iterates list and re-applies `options.filter` to each element.
+If an element no-longer passes the filter, then it is removed from the list.
+
+Returns boolean. (`false` if the operation is debounced, `true` otherwise)
 
 #### sortedList.unique(createNew)
 
