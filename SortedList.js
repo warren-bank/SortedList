@@ -86,7 +86,7 @@ SortedList.prototype.remove = function(pos) {
   return this
 }
 
-SortedList.prototype.refilter = function(debounce_ms) {
+SortedList.prototype.refilter = function(debounce_ms=0) {
   // sanity check: does the list use a filter function
   if (this._refilter_timestamp === undefined) return true
 
