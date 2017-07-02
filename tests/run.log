@@ -3,8 +3,8 @@ inserted
 key test ok
 
 =====like.js=====
-like: 5.678ms
-simple like: 104.584ms
+like: 3.830ms
+simple like: 147.333ms
 
 =====order.js=====
 [ 7, 6, 5, 4, 3, 2, 1, 0 ]
@@ -31,53 +31,45 @@ in ordered list: 13,11,9,7,3,1
   position of element '14' is '-1'
 
 =====performance.js=====
-inserting10000: 892.003ms
-pushing10000: 88.989ms
-arr10000: 22.489ms
-sorting100: 492.159ms
+inserting10000: 1009.780ms
+pushing10000: 68.413ms
+arr10000: 15.873ms
+sorting100: 447.794ms
 
 =====refilter.js=====
-[250 ms]: length of list = 10
-[500 ms]: length of list = 10
-[750 ms]: length of list = 10
-[1000 ms]: length of list = 9
-[1250 ms]: length of list = 9
-[1500 ms]: length of list = 9
-[1750 ms]: length of list = 9
-[2000 ms]: length of list = 8
-[2250 ms]: length of list = 8
-[2500 ms]: length of list = 8
-[2750 ms]: length of list = 8
-[3000 ms]: length of list = 7
-[3250 ms]: length of list = 7
-[3500 ms]: length of list = 7
-[3750 ms]: length of list = 7
-[4000 ms]: length of list = 6
-[4250 ms]: length of list = 6
-[4500 ms]: length of list = 6
-[4750 ms]: length of list = 6
-[5000 ms]: length of list = 5
-[5250 ms]: length of list = 5
-[5500 ms]: length of list = 5
-[5750 ms]: length of list = 5
-[6000 ms]: length of list = 4
-[6250 ms]: length of list = 4
-[6500 ms]: length of list = 4
-[6750 ms]: length of list = 4
-[7000 ms]: length of list = 3
-[7250 ms]: length of list = 3
-[7500 ms]: length of list = 3
-[7750 ms]: length of list = 3
-[8000 ms]: length of list = 2
-[8250 ms]: length of list = 2
-[8500 ms]: length of list = 2
-[8750 ms]: length of list = 2
-[9000 ms]: length of list = 1
-[9250 ms]: length of list = 1
-[9500 ms]: length of list = 1
-[9750 ms]: length of list = 1
-[10000 ms]: length of list = 0
-test complete
+----------------------------------------
+starting test #1: 0.5s
+[500 ms]: length of list = 10 (no change)
+[1000 ms]: length of list = 9 (removed elements: 10)
+[1500 ms]: length of list = 9 (no change)
+[2000 ms]: length of list = 8 (removed elements: 20)
+[2500 ms]: length of list = 8 (no change)
+[3000 ms]: length of list = 7 (removed elements: 30)
+[3500 ms]: length of list = 7 (no change)
+[4000 ms]: length of list = 6 (removed elements: 40)
+[4500 ms]: length of list = 6 (no change)
+[5000 ms]: length of list = 5 (removed elements: 50)
+[5500 ms]: length of list = 5 (no change)
+[6000 ms]: length of list = 4 (removed elements: 60)
+[6500 ms]: length of list = 4 (no change)
+[7000 ms]: length of list = 3 (removed elements: 70)
+[7500 ms]: length of list = 3 (no change)
+[8000 ms]: length of list = 2 (removed elements: 80)
+[8500 ms]: length of list = 2 (no change)
+[9000 ms]: length of list = 1 (removed elements: 90)
+[9500 ms]: length of list = 1 (no change)
+[10000 ms]: length of list = 0 (removed elements: 100)
+completed test #1: 0.5s
+----------------------------------------
+starting test #2: 1.5s
+[1500 ms]: length of list = 9 (removed elements: 10)
+[3000 ms]: length of list = 7 (removed elements: 20, 30)
+[4500 ms]: length of list = 6 (removed elements: 40)
+[6000 ms]: length of list = 4 (removed elements: 50, 60)
+[7500 ms]: length of list = 3 (removed elements: 70)
+[9000 ms]: length of list = 1 (removed elements: 80, 90)
+[10500 ms]: length of list = 0 (removed elements: 100)
+completed test #2: 1.5s
 
 =====sample.js=====
 [ 0, 0, false, 2, 1, 0 ]

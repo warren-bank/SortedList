@@ -180,7 +180,7 @@ If less time than `debounce_ms` has ellapsed since the last time the list was re
 Iterates list and re-applies `options.filter` to each element.
 If an element no-longer passes the filter, then it is removed from the list.
 
-Returns boolean. (`false` if the operation is debounced, `true` otherwise)
+Returns an ordered Array of filtered elements.
 
 #### sortedList.unique(createNew)
 

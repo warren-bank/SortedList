@@ -86,23 +86,32 @@ SortedList.prototype.remove = function(pos) {
   return this
 }
 
+/**
+ * sorted.refilter(debounce_ms)
+ * re-apply filter to each element in list
+ * returns an ordered Array of filtered elements
+ **/
 SortedList.prototype.refilter = function(debounce_ms=0) {
   // sanity check: does the list use a filter function
-  if (this._refilter_timestamp === undefined) return true
+  if (this._refilter_timestamp === undefined) return []
 
-  let now, wait_until, index
+  let now, wait_until, index, removed
 
   now = Date.now()
   wait_until = this._refilter_timestamp + debounce_ms
   // debounce
-  if (now < wait_until) return false
-
-  for (index=(this.length-1); index>=0; index--) {
-    if (! this._filter(this[index])) this.remove(index)
-  }
+  if (now < wait_until) return []
 
   this._refilter_timestamp = now
-  return true
+  removed = []
+  for (index=(this.length-1); index>=0; index--) {
+    if (! this._filter(this[index])) {
+      removed.push(this[index])
+      this.remove(index)
+    }
+  }
+  removed.reverse()
+  return removed
 }
 
 /**
